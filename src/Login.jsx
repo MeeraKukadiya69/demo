@@ -30,21 +30,36 @@ const Login = () => {
     }
     return (
         <>
-            <form method="post" onSubmit={handleSubmit}>
-                <table border={1} cellPadding={4} cellSpacing={0}>
-                    <tr>
-                        <td>Email</td>
-                        <td><input type="email" name="email" ref={txtemail} /></td>
-                    </tr>
-                    <tr>
-                        <td>Password</td>
-                        <td><input type="password" name="password" ref={txtpassword} /></td>
-                    </tr>
-                    <tr align="center">
-                        <td colspan="2"><input type="submit" value="Login" name="submit" /></td>
-                    </tr>
-                </table>
-            </form>
+             <div className="login-main">
+                <div className="container">
+                    <h2>LOG IN</h2>
+                    <form method="post" onSubmit={handleSubmit}>
+                        <div className="input">
+                            <table align="center">
+                                <h5>EMAIL</h5>
+                                <div className="tr">
+                                    <input type="email" className="email" name="email" size="30" placeholder="your@email.com" ref={txtemail} />
+                                </div>
+                                <h5>PASSWORD</h5>
+                                <div className="tr">
+                                    <input type="password" className="password" name="password" size="30" placeholder="password" ref={txtpassword} />
+                                </div>
+                                <div className="tr">
+                                    <input type="submit" value="LOG IN" name="submit" className="submit" />
+                                </div>
+                            </table>
+                            <a href="#" className="forget-password">Forget Password?</a>
+                            <h3 className="h3">OR CONTINUE WITH</h3>
+                            <div className="icons">
+                                <GrApple className="icon-1" /><FaFacebook className="icon-2" /><FcGoogle className="icon-3" /><GrAmazon className="icon-4" />
+                            </div>
+                            <div className="sign-up">
+                                <h4 className="h4">Don't have an account yet? <a href="#">Sign up</a></h4>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </>
     );
 }
